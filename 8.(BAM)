@@ -1,0 +1,17 @@
+import numpy as np
+
+
+X = np.array([[1,-1,1],
+              [-1,1,-1]])
+
+Y = np.array([[1,1,-1],
+              [-1,-1,1]])
+
+
+W = np.dot(X.T, Y)
+
+
+input_x = np.array([1,-1,1])
+output = np.sign(np.dot(input_x, W))
+
+print("Associated Output:", output)
