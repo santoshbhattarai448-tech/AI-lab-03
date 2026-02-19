@@ -1,0 +1,22 @@
+import numpy as np
+
+
+patterns = np.array([
+    [1,-1,1,-1],
+    [-1,1,-1,1]
+])
+
+
+W = np.zeros((4,4))
+for p in patterns:
+    W += np.outer(p,p)
+
+np.fill_diagonal(W,0)
+
+
+input_pattern = np.array([1,-1,-1,-1])
+
+for _ in range(5):
+    input_pattern = np.sign(np.dot(W,input_pattern))
+
+print("Recovered Pattern:", input_pattern)
